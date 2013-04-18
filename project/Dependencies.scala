@@ -5,7 +5,9 @@ import sbt._
  */
 
 object Dependencies {
-  val utilVersion = "0.64-SNAPSHOT"
-  val utilActor = "com.mle" %% "util-actor" % utilVersion
-  val utilJdbc = "com.mle" %% "util-jdbc" % utilVersion
+  val utilVersion = "0.69-SNAPSHOT"
+  val utilGroup = "com.github.malliina"
+  val utilDep = utilGroup %% "util" % "0.701-SNAPSHOT"
+  val utilActor = utilGroup %% "util-actor" % utilVersion
+  val utilJdbc = utilGroup %% "util-jdbc" % utilVersion
 }

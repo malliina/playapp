@@ -1,0 +1,12 @@
+@()(implicit request: RequestHeader)
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket;
+        webSocket= new WS("@routes.Test.ws().webSocketURL()");
+        webSocket.onopen = onConnect
+        webSocket.onmessage = onMessage
+        webSocket.onclose = onClose
+        webSocket.onerror = onError
+    });
+</script>

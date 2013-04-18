@@ -12,7 +12,6 @@ import akka.pattern.ask
 
 import play.api.Play.current
 import scala.concurrent.ExecutionContext.Implicits.global
-import play.libs.F.Promise
 import concurrent.Future
 
 object Robot {

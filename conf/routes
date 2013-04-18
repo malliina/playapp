@@ -4,6 +4,9 @@
 
 # Home page
 GET     /                           controllers.HelloWorld.index
+# Testing
+GET     /test           controllers.Test.index
+GET     /test/ws        controllers.Test.ws
 
 # Hello action
 GET     /hello                      controllers.HelloWorld.sayHello
@@ -17,11 +20,6 @@ GET     /money                      controllers.HelloWorld.money
 
 GET     /secret                     controllers.HelloWorld.secret
 
-# TODO app
-GET     /tasks                      controllers.MyTasks.home
-GET     /tasks/create               controllers.MyTasks.newTask
-GET     /tasks/:id/delete           controllers.MyTasks.delete(id:Long)
-
 # Web Sockets
 GET     /ws                         controllers.WebSockets.index
 GET     /ws/open                    controllers.WebSockets.webSocket
@@ -30,8 +28,3 @@ GET     /ws/open                    controllers.WebSockets.webSocket
 GET     /chat                       controllers.ChatApp.index
 GET     /chat/room                  controllers.ChatApp.chatRoom(username: Option[String] ?= None)
 GET     /chat/room/chat             controllers.ChatApp.chat(username)
-
-# Async test pages
-GET     /async                      controllers.Async.index
-
-#GET /rest                           controllers.

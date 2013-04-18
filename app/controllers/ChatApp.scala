@@ -3,15 +3,15 @@ package controllers
 import models.ChatRoom
 import play.api.libs.json.JsValue
 import play.api.mvc._
-import util.PlayLog
 import views._
+import com.mle.util.Log
 
 
 /**
  *
  * @author Mle
  */
-object ChatApp extends Controller with PlayLog {
+object ChatApp extends Controller with Log {
   def index = Action {
     implicit request =>
       Ok(html.chatIndex("Hoi!"))

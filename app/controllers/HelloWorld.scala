@@ -3,11 +3,11 @@ package controllers
 import play.api.data.Forms._
 import play.api.data._
 import play.api.mvc._
-import util.PlayLog
 import views._
+import com.mle.util.Log
 
 
-object HelloWorld extends Controller with PlayLog {
+object HelloWorld extends Controller with Log {
 
   /**
    * Describes the hello form.

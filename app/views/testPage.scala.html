@@ -1,0 +1,22 @@
+@()(implicit request: RequestHeader)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> Web Sockets </title>
+    <script src="@routes.Assets.at("js/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("js/ws-test.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <p>To server</p>
+        <input type="text" id="in"/><button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="messages">
+    <p>From server</p>
+
+    </div>
+</body>
+    @wsOpen()
+</html>

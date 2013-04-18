@@ -2,15 +2,14 @@ package controllers
 
 import play.api.libs.iteratee.{Concurrent, Iteratee}
 import play.api.mvc._
-import util.PlayLog
-import models.WebSocketsManager
+import com.mle.util.Log
 
 
 /**
  *
  * @author Mle
  */
-object WebSockets extends Controller with PlayLog {
+object WebSockets extends Controller with Log {
   type ClientChannel = Concurrent.Channel[String]
 
   def index = Action {
@@ -25,7 +24,6 @@ object WebSockets extends Controller with PlayLog {
   })
 
   def onConnect(channel: ClientChannel, request: RequestHeader) {
-    WebSocketsManager connect channel
     log debug "IP: " + request.remoteAddress +
       "\nQuery string: " + request.queryString +
       "\nMethod: " + request.method +
@@ -36,7 +34,6 @@ object WebSockets extends Controller with PlayLog {
   }
 
   def onClose(channel: ClientChannel) {
-    WebSocketsManager disconnect channel
   }
 
   def onMessage(msg: String, channel: ClientChannel) {
